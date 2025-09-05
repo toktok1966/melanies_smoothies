@@ -15,7 +15,10 @@ st.write("The Name on the smoothi will be: "+ name_on_order)
 
 
 
-session = get_active_session()
+#session = get_active_session()
+cnx = st.connection("snowflake")
+session = cnx.session()
+
 my_dataframe = session.table("smoothies.public.fruit_options").select(col("FRUIT_NAME"))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
