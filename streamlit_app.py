@@ -10,10 +10,12 @@ st.write(
   """
 )
 
+import requests
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
+
 name_on_order = st.text_input("Name on Smoothi")
 st.write("The Name on the smoothi will be: "+ name_on_order)
-
-
 
 #session = get_active_session()
 cnx = st.connection("snowflake")
